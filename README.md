@@ -99,6 +99,9 @@ Clone this repository to your desired folder:
 - LinkedIn: [Emre Karayaman](https://www.linkedin.com/in/emre-karayaman-a7b45b243/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 🔭 Future Features <a name="future-features"></a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
