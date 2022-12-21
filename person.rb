@@ -2,8 +2,8 @@ require './nameable'
 require './decorator'
 
 class Person < Nameable
-  attr_accessor :name, :age, :rentals
-  attr_reader :id
+  attr_accessor :name, :age
+  attr_reader :id, :rentals, :parent_permission
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = rand(1..1000)
@@ -14,8 +14,8 @@ class Person < Nameable
     super()
   end
 
-  def add_rental(date, person)
-    Rental.new(date, self, person)
+  def add_rental(book, date)
+    Rental.new(date, book, self)
   end
 
   def correct_name
