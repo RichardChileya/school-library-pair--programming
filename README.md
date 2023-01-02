@@ -98,6 +98,12 @@ Clone this repository to your desired folder:
 - Twitter: [@KarayamanEmre](https://twitter.com/KarayamanEmre)
 - LinkedIn: [Emre Karayaman](https://www.linkedin.com/in/emre-karayaman-a7b45b243/)
 
+👤 **Richard Chileya**
+
+- GitHub: [@RichardChileya](https://github.com/RichardChileya)
+- Twitter: [@KarayamanEmre](https://twitter.com/RichardChileya)
+- LinkedIn: [Emre Karayaman](https://www.linkedin.com/in/RichardChileya/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 ## 🔭 Future Features <a name="future-features"></a>
 
