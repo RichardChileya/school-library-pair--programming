@@ -23,8 +23,12 @@ class App
     menu
   end
 
-  def load
-    save_book
+  def load_data
+    load_person
+    puts
+    load_books
+    puts
+    load_rentals
   end
 
   def list_books
