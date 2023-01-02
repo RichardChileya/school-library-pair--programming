@@ -4,6 +4,7 @@ require './create_person'
 require './create_book'
 require './create_rental'
 
+# rubocop:disable Metrics/CyclomaticComplexity
 def user_choice(choice)
   case choice
   when 1
