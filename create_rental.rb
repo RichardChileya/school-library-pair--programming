@@ -1,5 +1,6 @@
 require './app'
 require './rental'
+require './data/data'
 
 def create_rental
   if @books.empty?
@@ -19,6 +20,7 @@ def create_rental
     date = gets.chomp
     rental_detail = Rental.new(@people[rental_person], @books[rental_book], date)
     @rentals.push(rental_detail)
+    save_rental(date, @people[rental_person], @books[rental_book])
     puts 'Rental created.'
   end
 end

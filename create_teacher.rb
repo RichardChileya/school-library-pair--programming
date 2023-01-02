@@ -1,4 +1,5 @@
 require './app'
+require './data/data'
 
 def create_teacher
   print 'Age:'
@@ -12,5 +13,6 @@ def create_teacher
 
   teacher = Teacher.new(specialization, age, name)
   @people.push(teacher)
+  save_teacher(name, age, specialization)
   puts 'Teacher created.'
 end

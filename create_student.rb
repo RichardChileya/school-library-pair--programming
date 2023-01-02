@@ -1,4 +1,5 @@
 require './app'
+require './data/data'
 
 def create_student
   print 'Age:'
@@ -12,5 +13,6 @@ def create_student
 
   student = Student.new(age, name, parent_permission: parent_permission)
   @people.push(student)
+  save_student(name, age, parent_permission: parent_permission)
   puts 'Student created.'
 end
