@@ -27,3 +27,4 @@ def user_choice(choice)
   end
   menu
 end
+# rubocop:enable Metrics/CyclomaticComplexity

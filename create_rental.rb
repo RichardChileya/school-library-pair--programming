@@ -2,9 +2,9 @@ require './app'
 require './rental'
 
 def create_rental
-  if @books.size.zero?
+  if @books.empty?
     puts 'No book records.'
-  elsif @people.size.zero?
+  elsif @people.empty?
     puts 'No person records.'
   else
     puts 'Select a book from the following list by number:'
