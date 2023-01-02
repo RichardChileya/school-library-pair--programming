@@ -1,5 +1,8 @@
 require './app'
 require './index'
+require './create_person'
+require './create_book'
+require './create_rental'
 
 def user_choice(choice)
   case choice

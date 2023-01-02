@@ -18,5 +18,5 @@ def menu
     puts "#{index} - #{string}"
   end
 
-  choice(gets.chomp.to_i)
+  user_choice(gets.chomp.to_i)
 end
