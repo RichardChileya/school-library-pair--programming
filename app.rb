@@ -3,6 +3,7 @@ require_relative './book'
 require_relative './teacher'
 require_relative './student'
 require_relative './rental'
+require_relative './index'
 require 'date'
 
 class App
@@ -10,6 +11,12 @@ class App
     @books = []
     @rentals = []
     @people = []
+  end
+
+  def welcome
+    puts 'Welcome to the School Library.'
+    puts "\n"
+    menu
   end
 
   def list_books
