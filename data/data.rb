@@ -52,29 +52,6 @@ def load_books
   @books.each { |b| puts "Book Title: #{b.title}, Book Author: #{b.author}" } unless @books.empty?
 end
 
-def load_person
-  if File.exist?('./data/person.json')
-    file = File.open('./data/person.json')
-    if File.empty?('./data/person.json')
-      puts 'No person records yet.'
-    else
-      people = JSON.parse(File.read('./data/person.json'))
-      people.each do |person|
-        if person['option'] == 'Student'
-          student = Student.new(person['age'], person['name'])
-          @people << student
-        else
-          teacher = Teacher.new(person['specialization'], person['age'], person['name'])
-          @people << teacher
-        end
-      end
-    end
-    file.close
-  else
-    puts 'Please add a person.'
-  end
-end
-
 def save_student(name, age, parent_permission)
   obj = {
     type: 'Student',
@@ -125,6 +102,31 @@ def save_teacher(name, age, specialization)
   addfile = File.open('./data/person.json', 'w')
   addfile.write(JSON.generate(teacher))
   addfile.close
+end
+
+def load_person
+  if File.exist?('./data/person.json')
+    file = File.open('./data/person.json')
+    if File.empty?('./data/person.json')
+      puts 'No person records yet.'
+    else
+      people = JSON.parse(File.read('./data/person.json'))
+      puts 'Person list:'
+      people.each do |person|
+        if person['option'] == 'Student'
+          student = Student.new(person['age'], person['name'])
+          @people << student
+        else
+          teacher = Teacher.new(person['specialization'], person['age'], person['name'])
+          @people << teacher
+        end
+      puts "Name: #{person['name']}, Age: #{person['age']}, [#{person['type']}]"
+      end
+    end
+    file.close
+  else
+    puts 'Please add a person.'
+  end
 end
 
 def load_rentals
