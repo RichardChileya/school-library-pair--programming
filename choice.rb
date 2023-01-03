@@ -18,7 +18,7 @@ def user_choice(choice)
   when 5
     create_rental
   when 6
-    list_rentals
+    load_rentals
   when 7
     puts 'Thank you and have a nice day.'
     exit
