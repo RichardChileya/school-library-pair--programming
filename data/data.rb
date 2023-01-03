@@ -13,7 +13,7 @@ def save_book(title, author)
   return unless File.exist?('./data/books.json')
 
   file = File.open('./data/books.json')
-# rubocop:disable Style/ZeroLengthPredicate
+  # rubocop:disable Style/ZeroLengthPredicate
   if file.size.zero?
     book = [obj]
   else
@@ -163,7 +163,7 @@ def save_rental(date, people, book)
     rental = JSON.parse(File.read('./data/rentals.json'))
     rental << obj
   end
-# rubocop:enable Style/ZeroLengthPredicate
+  # rubocop:enable Style/ZeroLengthPredicate
   file.close
 
   addfile = File.open('./data/rentals.json', 'w')
