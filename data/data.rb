@@ -137,7 +137,7 @@ def load_rentals
       rentals = JSON.parse(File.read('./data/rentals.json'))
       puts 'Rented books: '
       rentals.each do |rental|
-        puts "Name: #{rental['person']}, Book: #{rental['book']} on: #{rental['date']}"
+        puts "Name: #{rental['people']}, Book: #{rental['book']} on: #{rental['date']}"
       end
     end
     file.close
