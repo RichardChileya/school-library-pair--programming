@@ -13,6 +13,7 @@ def save_book(title, author)
   return unless File.exist?('./data/books.json')
 
   file = File.open('./data/books.json')
+  # rubocop:disable Style/ZeroLengthPredicate
   if file.size.zero?
     book = [obj]
   else
@@ -30,7 +31,7 @@ end
 def load_books
   if File.exist?('./data/books.json')
     file = File.open('./data/books.json')
-    # rubocop:disable Style/ZeroLengthPredicate
+    
     if file.size.zero?
       'No book records yet.'
     else
