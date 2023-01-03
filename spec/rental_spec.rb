@@ -28,7 +28,7 @@ describe Rental do
       expect(student.age).to eq 27
     end
 
-    it 'show student permission' do 
+    it 'show student permission' do
       expect(student.parent_permission).to eq true
     end
   end
