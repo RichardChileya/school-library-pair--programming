@@ -31,7 +31,7 @@ end
 def load_books
   if File.exist?('./data/books.json')
     file = File.open('./data/books.json')
-    
+
     if file.size.zero?
       'No book records yet.'
     else
