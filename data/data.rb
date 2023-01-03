@@ -13,7 +13,6 @@ def save_book(title, author)
   return unless File.exist?('./data/books.json')
 
   file = File.open('./data/books.json')
-  # rubocop:disable Style/ZeroLengthPredicate
   if file.size.zero?
     book = [obj]
   else
@@ -105,28 +104,26 @@ def save_teacher(name, age, specialization)
 end
 
 def load_person
-  if File.exist?('./data/person.json')
-    file = File.open('./data/person.json')
-    if File.empty?('./data/person.json')
-      puts 'No person records yet.'
-    else
-      people = JSON.parse(File.read('./data/person.json'))
-      puts 'Person list:'
-      people.each do |person|
-        if person['option'] == 'Student'
-          student = Student.new(person['age'], person['name'])
-          @people << student
-        else
-          teacher = Teacher.new(person['specialization'], person['age'], person['name'])
-          @people << teacher
-        end
-      puts "Name: #{person['name']}, Age: #{person['age']}, [#{person['type']}]"
-      end
-    end
-    file.close
+  return unless File.exist?('./data/person.json')
+
+  file = File.open('./data/person.json')
+  if File.empty?('./data/person.json')
+    puts 'No person records yet.'
   else
-    puts 'Please add a person.'
+    people = JSON.parse(File.read('./data/person.json'))
+    puts 'Person list:'
+    people.each do |person|
+      if person['option'] == 'Student'
+        student = Student.new(person['age'], person['name'])
+        @people << student
+      else
+        teacher = Teacher.new(person['specialization'], person['age'], person['name'])
+        @people << teacher
+      end
+      puts "Name: #{person['name']}, Age: #{person['age']}, [#{person['type']}]"
+    end
   end
+  file.close
 end
 
 def load_rentals
@@ -165,7 +162,6 @@ def save_rental(date, people, book)
     rental = JSON.parse(File.read('./data/rentals.json'))
     rental << obj
   end
-  # rubocop:enable Style/ZeroLengthPredicate
   file.close
 
   addfile = File.open('./data/rentals.json', 'w')
