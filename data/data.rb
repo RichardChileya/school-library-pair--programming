@@ -13,8 +13,8 @@ def save_book(title, author)
   return unless File.exist?('./data/books.json')
 
   file = File.open('./data/books.json')
-
-  if file.empty?
+# rubocop:disable Style/ZeroLengthPredicate
+  if file.size.zero?
     book = [obj]
   else
     book = JSON.parse(File.read('./data/books.json'))
@@ -32,7 +32,7 @@ def load_books
   if File.exist?('./data/books.json')
     file = File.open('./data/books.json')
 
-    if file.empty?
+    if file.size.zero?
       'No book records yet.'
     else
       books = JSON.parse(File.read('./data/books.json'))
@@ -87,7 +87,7 @@ def save_student(name, age, parent_permission)
 
   file = File.open('./data/person.json')
 
-  if file.empty?
+  if file.size.zero?
     student = [obj]
   else
     student = JSON.parse(File.read('./data/person.json'))
@@ -106,15 +106,14 @@ def save_teacher(name, age, specialization)
     type: 'Teacher',
     name: name,
     specialization: specialization,
-    age: age,
-    parent_permission: true
+    age: age
   }
 
   return unless File.exist?('./data/person.json')
 
   file = File.open('./data/person.json')
 
-  if file.empty?
+  if file.size.zero?
     teacher = [obj]
   else
     teacher = JSON.parse(File.read('./data/person.json'))
@@ -132,7 +131,7 @@ def load_rentals
   if File.exist?('./data/rentals.json')
     file = File.open('./data/rentals.json')
 
-    if file.empty?
+    if file.size.zero?
       puts 'No rentals yet.'
     else
       rentals = JSON.parse(File.read('./data/rentals.json'))
@@ -158,13 +157,13 @@ def save_rental(date, people, book)
 
   file = File.open('./data/rentals.json')
 
-  if file.empty?
+  if file.size.zero?
     rental = [obj]
   else
     rental = JSON.parse(File.read('./data/rentals.json'))
     rental << obj
   end
-
+# rubocop:enable Style/ZeroLengthPredicate
   file.close
 
   addfile = File.open('./data/rentals.json', 'w')
